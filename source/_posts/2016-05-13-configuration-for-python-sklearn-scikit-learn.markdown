@@ -20,11 +20,9 @@ categories:
 
 
 from sklearn import datasets，出错：
-
 错误提示：ValueError: numpy.dtype has the wrong size, try recompiling
 
 from sklearn import svm，出错：
-
 错误提示：ImportError: cannot import name __check_build
 
 用pip更新了sklearn还是不行
