@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://alphabird.github.io/atom.xml" rel="self"/>
+  <link href="http://alphabird.github.io/"/>
+  <updated>2016-05-13T17:35:21+08:00</updated>
+  <id>http://alphabird.github.io/</id>
+  <author>
+    <name><![CDATA[AlphaBird]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Configuration for Python Sklearn(scikit-learn)]]></title>
+    <link href="http://alphabird.github.io/blog/2016/05/13/configuration-for-python-sklearn-scikit-learn/"/>
+    <updated>2016-05-13T16:34:10+08:00</updated>
+    <id>http://alphabird.github.io/blog/2016/05/13/configuration-for-python-sklearn-scikit-learn</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
