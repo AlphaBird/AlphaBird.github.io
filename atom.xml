@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://alphabird.github.io/atom.xml" rel="self"/>
   <link href="http://alphabird.github.io/"/>
-  <updated>2016-05-13T17:35:21+08:00</updated>
+  <updated>2016-05-16T12:15:41+08:00</updated>
   <id>http://alphabird.github.io/</id>
   <author>
     <name><![CDATA[AlphaBird]]></name>
@@ -14,11 +14,54 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Configuration for Python Sklearn(scikit-learn)]]></title>
+    <title type="html"><![CDATA[Configuration for Python Sklearn Scikit Learn]]></title>
     <link href="http://alphabird.github.io/blog/2016/05/13/configuration-for-python-sklearn-scikit-learn/"/>
-    <updated>2016-05-13T16:34:10+08:00</updated>
+    <updated>2016-05-13T00:00:00+08:00</updated>
     <id>http://alphabird.github.io/blog/2016/05/13/configuration-for-python-sklearn-scikit-learn</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<hr />
+
+<p>layout: post
+title: &ldquo;Configuration for Python sklearn(scikit-learn)&rdquo;
+date: 2016-05-13 16:34:10 +0800
+comments: true
+categories:</p>
+
+<p>记录一下自己在Mac下安装sklearn时遇到的问题和解决的方法，供大家参考。</p>
+
+<p>注：MacBook Pro，系统是OS X EI Captain，Version 10.11.3</p>
+
+<p>一、遇到的问题</p>
+
+<p>安装scikit-learn：用命令pip install scikit-learn</p>
+
+<p>（Mac OS自带的Python，用brew工具装了pip）</p>
+
+<p>安装完毕，打开Python，import sklearn，出错，主要错误如下：</p>
+
+<p>from sklearn import datasets，出错：
+错误提示：ValueError: numpy.dtype has the wrong size, try recompiling</p>
+
+<p>from sklearn import svm，出错：
+错误提示：ImportError: cannot import name __check_build</p>
+
+<p>用pip更新了sklearn还是不行
+pip update sklearn</p>
+
+<p>二、解决方法</p>
+
+<p>1、sklearn对numpy包有依赖，因此索性更新了numpy、scipy：
+pip update numpy, pip update scipy</p>
+
+<p>2、然后卸载sklearn：
+pip uninstall scikit-learn</p>
+
+<p>3、重新安装sklearn：
+pip install scikit-learn &ndash;user python</p>
+
+<p>再次启动Python，再次import sklearn，不报错，成功。</p>
+
+<p>注意如果第3步用pip install scikit-learn，就是不加&ndash;user python，会出错。
+原因是 OS X El Capitan系统引入了System Integrity Protection，需要加&ndash;user python.</p>
 ]]></content>
   </entry>
   
