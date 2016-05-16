@@ -52,8 +52,8 @@ pip install scikit-learn --user python
 
 再次启动Python，再次import sklearn，不报错，成功。
 
-注意如果第3步用pip install scikit-learn，就是不加`--`user python，会出错，出错信息如下：
+注意如果第3步用pip install scikit-learn，就是不加`--user python`，会出错，出错信息如下：
 
 ![](oserror.png)
 
-原因是 OS X El Capitan系统引入了System Integrity Protection，需要加`--`user python.
+原因是 OS X El Capitan系统引入了System Integrity Protection，需要加`--user python`.
