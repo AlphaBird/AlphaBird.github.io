@@ -9,11 +9,8 @@
   <meta name="author" content="AlphaBird">
 
   
-  <meta name="description" content="layout: post
-title: &ldquo;Configuration for Python sklearn(scikit-learn)&rdquo;
-date: 2016-05-13 16:34:10 +0800
-comments: true
-categories: &hellip;">
+  <meta name="description" content="&ndash; 记录一下自己在Mac下安装sklearn时遇到的问题和解决的方法，供大家参考。 注：MacBook Pro，系统是OS X EI Captain，Version 10.11.3 一、遇到的问题 安装scikit-learn： 1
+pip install scikit-learn （ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -31,10 +28,22 @@ categories: &hellip;">
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
+<!--link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"-->
+
+<script>
+  function addBlankTargetForLinks () {
+          $('a[href^="http"]').each(function(){
+                        $(this).attr('target', '_blank');
+                            });
+            }
+  $(document).bind('DOMNodeInserted', function(event) {
+              addBlankTargetForLinks();
+                });
+</script>
 
   
+<!--line 9: ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
 
 </head>
 
@@ -91,13 +100,7 @@ categories: &hellip;">
   </header>
 
 
-  <div class="entry-content"><hr />
-
-<p>layout: post
-title: &ldquo;Configuration for Python sklearn(scikit-learn)&rdquo;
-date: 2016-05-13 16:34:10 +0800
-comments: true
-categories:</p>
+  <div class="entry-content"><p>&ndash;</p>
 
 <p>记录一下自己在Mac下安装sklearn时遇到的问题和解决的方法，供大家参考。</p>
 
@@ -105,38 +108,60 @@ categories:</p>
 
 <p>一、遇到的问题</p>
 
-<p>安装scikit-learn：用命令pip install scikit-learn</p>
+<p>安装scikit-learn：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip install scikit-learn</span></code></pre></td></tr></table></div></figure>
+
 
 <p>（Mac OS自带的Python，用brew工具装了pip）</p>
 
 <p>安装完毕，打开Python，import sklearn，出错，主要错误如下：</p>
 
-<p>from sklearn import datasets，出错：
-错误提示：ValueError: numpy.dtype has the wrong size, try recompiling</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from sklearn import datasets</span></code></pre></td></tr></table></div></figure>
 
-<p>from sklearn import svm，出错：
-错误提示：ImportError: cannot import name __check_build</p>
+
+<p>错误提示：ValueError: numpy.dtype has the wrong size, try recompiling</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from sklearn import svm</span></code></pre></td></tr></table></div></figure>
+
+
+<p>错误提示：ImportError: cannot import name __check_build</p>
 
 <p>用pip更新了sklearn还是不行
 pip update sklearn</p>
 
 <p>二、解决方法</p>
 
-<p>1、sklearn对numpy包有依赖，因此索性更新了numpy、scipy：
-pip update numpy, pip update scipy</p>
+<p>1、sklearn对numpy包有依赖，因此索性更新了numpy、scipy：</p>
 
-<p>2、然后卸载sklearn：
-pip uninstall scikit-learn</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip update numpy
+</span><span class='line'>pip update scipy</span></code></pre></td></tr></table></div></figure>
 
-<p>3、重新安装sklearn：
-pip install scikit-learn &mdash;user python</p>
+
+<p>2、然后卸载sklearn：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip uninstall scikit-learn</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3、重新安装sklearn：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip install scikit-learn --user python</span></code></pre></td></tr></table></div></figure>
+
 
 <p>再次启动Python，再次import sklearn，不报错，成功。</p>
 
-<p>注意如果第3步用pip install scikit-learn，就是不加&ndash;user python，会出错，出错信息如下：
-<img src="oserror.png" alt="" /></p>
+<p>注意如果第3步用pip install scikit-learn，就是不加<code>--user python</code>，会出错，出错信息如下：</p>
 
-<p>原因是 OS X El Capitan系统引入了System Integrity Protection，需要加&ndash;user python.</p>
+<p><img src="oserror.png" alt="" /></p>
+
+<p>原因是 OS X El Capitan系统引入了System Integrity Protection，需要加<code>--user python</code>.</p>
 </div>
   
   
@@ -185,16 +210,6 @@ pip install scikit-learn &mdash;user python</p>
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
