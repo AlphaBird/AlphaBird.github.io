@@ -9,17 +9,23 @@
 
 安装scikit-learn：
 
-```pip install scikit-learn```
+```
+pip install scikit-learn
+```
 
 （Mac OS自带的Python，用brew工具装了pip）
 
 安装完毕，打开Python，import sklearn，出错，主要错误如下：
 
 
-```from sklearn import datasets```
+```
+from sklearn import datasets
+```
 错误提示：ValueError: numpy.dtype has the wrong size, try recompiling
 
-```from sklearn import svm```
+```
+from sklearn import svm
+```
 错误提示：ImportError: cannot import name __check_build
 
 用pip更新了sklearn还是不行
@@ -29,14 +35,20 @@ pip update sklearn
 二、解决方法
 
 1、sklearn对numpy包有依赖，因此索性更新了numpy、scipy：
-```pip update numpy
-pip update scipy```
+```
+pip update numpy
+pip update scipy
+```
 
 2、然后卸载sklearn：
-```pip uninstall scikit-learn```
+```
+pip uninstall scikit-learn
+```
 
 3、重新安装sklearn：
-```pip install scikit-learn --user python```
+```
+pip install scikit-learn --user python
+```
 
 再次启动Python，再次import sklearn，不报错，成功。
 
