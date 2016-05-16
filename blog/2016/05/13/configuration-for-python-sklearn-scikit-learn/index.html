@@ -36,9 +36,11 @@ pip update numpy, pip update scipy</p>
 pip uninstall scikit-learn</p>
 
 <p>3、重新安装sklearn：
-pip install scikit-learn &ndash;user python</p>
+pip install scikit-learn &mdash;user python</p>
 
 <p>再次启动Python，再次import sklearn，不报错，成功。</p>
 
-<p>注意如果第3步用pip install scikit-learn，就是不加&ndash;user python，会出错。
-原因是 OS X El Capitan系统引入了System Integrity Protection，需要加&ndash;user python.</p>
+<p>注意如果第3步用pip install scikit-learn，就是不加&ndash;user python，会出错，出错信息如下：
+<img src="oserror.png" alt="" /></p>
+
+<p>原因是 OS X El Capitan系统引入了System Integrity Protection，需要加&ndash;user python.</p>
