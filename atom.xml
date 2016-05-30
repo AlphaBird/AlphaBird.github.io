@@ -4,7 +4,7 @@
   <title><![CDATA[AlphaBird''s Blog]]></title>
   <link href="http://alphabird.github.io/atom.xml" rel="self"/>
   <link href="http://alphabird.github.io/"/>
-  <updated>2016-05-30T13:42:34+08:00</updated>
+  <updated>2016-05-30T13:47:50+08:00</updated>
   <id>http://alphabird.github.io/</id>
   <author>
     <name><![CDATA[AlphaBird]]></name>
@@ -77,7 +77,7 @@ pip update sklearn</p>
 
 <p>注意如果第3步用pip install scikit-learn，就是不加<code>--user python</code>，会出错，出错信息如下：</p>
 
-<p><img src="http://alphabird.github.io/source/images/oserror.png" alt="" /></p>
+<p><img src="http://alphabird.github.io/images/oserror.png" alt="" /></p>
 
 <p>原因是 OS X El Capitan系统引入了System Integrity Protection，需要加<code>--user python</code>.</p>
 ]]></content>
