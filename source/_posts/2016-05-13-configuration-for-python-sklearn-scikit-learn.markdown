@@ -39,6 +39,10 @@ pip update sklearn
 pip update numpy
 pip update scipy
 ```
+其实主要是更新numpy起了作用，用如下命令也可以：
+```
+easy_install --upgrade numpy
+```
 
 2、然后卸载sklearn：
 ```
