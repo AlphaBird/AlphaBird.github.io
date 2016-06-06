@@ -4,7 +4,7 @@
   <title><![CDATA[AlphaBird''s Blog]]></title>
   <link href="http://alphabird.github.io/atom.xml" rel="self"/>
   <link href="http://alphabird.github.io/"/>
-  <updated>2016-05-30T13:47:50+08:00</updated>
+  <updated>2016-06-06T14:46:34+08:00</updated>
   <id>http://alphabird.github.io/</id>
   <author>
     <name><![CDATA[AlphaBird]]></name>
@@ -59,6 +59,12 @@ pip update sklearn</p>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>pip update numpy
 </span><span class='line'>pip update scipy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其实主要是更新numpy起了作用，用如下命令也可以：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>easy_install --upgrade numpy</span></code></pre></td></tr></table></div></figure>
 
 
 <p>2、然后卸载sklearn：</p>
